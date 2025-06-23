@@ -15,14 +15,12 @@ public class newLoginController {
 		return "newlogin";
 	}
 	
-	 @RequestMapping(value="/login", method = RequestMethod.POST)
-	    public String handleLogin(@RequestParam String username, 
-	                              @RequestParam String password, 
-	                              ModelMap model) {
-	        // Dummy authentication logic (replace with real logic)
+	@RequestMapping(value="/login", method = RequestMethod.POST)
+	public String handleLogin(@RequestParam String username,@RequestParam String password, ModelMap model) {
+	    
 	        if ("admin".equals(username) && "1234".equals(password)) {
 	            model.put("username", username);
-	            return "welcome"; // JSP page name without `.jsp`
+	            return "welcome";
 	        } else {
 	            model.put("error", "Invalid Credentials");
 	            return "newlogin";
