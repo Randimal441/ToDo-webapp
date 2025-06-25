@@ -31,6 +31,12 @@ public class TodoController {
 		return "todo";
 	}
 	
+	@RequestMapping(value ="add-todo", method = RequestMethod.POST)
+	public String addNewTodo(ModelMap model) {
+		
+		return "listTodos";
+	}
+	
 	
 
 }
