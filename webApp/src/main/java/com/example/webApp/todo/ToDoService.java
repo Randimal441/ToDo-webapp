@@ -15,17 +15,17 @@ public class ToDoService {
 	
 	private static int todosCount = 0;
 	static {
-		todos.add(new ToDo(, "in28min", "Learn Was", LocalDate.now().plusYears(1), false));
-		todos.add(new ToDo(1, "in28min", "Learn ABC", LocalDate.now().plusYears(2), false));
-		todos.add(new ToDo(1, "in28min", "Learn DEF", LocalDate.now().plusYears(3), false));
+		todos.add(new ToDo(++todosCount, "in28min", "Learn Was", LocalDate.now().plusYears(1), false));
+		todos.add(new ToDo(++todosCount, "in28min", "Learn ABC", LocalDate.now().plusYears(2), false));
+		todos.add(new ToDo(++todosCount, "in28min", "Learn DEF", LocalDate.now().plusYears(3), false));
 	}
 	
 	public List<ToDo> findByUsername(String username){
 		return todos;
 	}
 	public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
-		
-		
+		ToDo todo = new ToDo (++todosCount, username,description,targetDate,done);
+		todos.add(todo);
 	}
 	
 }
