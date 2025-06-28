@@ -71,11 +71,11 @@
         <h1>Enter To-Do Details</h1>
     </div>
 
-    <form method="post" action="/submit-todo">
+    <form method="post">
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" required />
 
-        <input type="submit" value="Add ToDo" class="btn" />
+        <input type="submit" class="btn" />
     </form>
 </body>
 </html>
