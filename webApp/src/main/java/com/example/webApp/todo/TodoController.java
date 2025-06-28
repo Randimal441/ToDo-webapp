@@ -40,6 +40,10 @@ public class TodoController {
 		return "redirect:list-todos";
 	}
 	
-	
+	@RequestMapping("delete-todo")
+	public String deleteTodo(@RequestParam int id) {
+		//delete toDo
+		return "redirect:list-todos";
+	}
 
 }

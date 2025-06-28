@@ -4,7 +4,7 @@
 <head>
     <title>To-Do List</title>
     <style>
-        body {
+       body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1e3c72, #2a5298);
@@ -71,6 +71,22 @@
         tbody tr:last-child td {
             border-bottom: none;
         }
+		.btn-delete {
+		       display: inline-block;
+		       padding: 10px 20px;
+		       background-color: #e74c3c; /* Red */
+		       color: #fff;
+		       font-size: 14px;
+		       font-weight: 600;
+		       text-decoration: none;
+		       border-radius: 6px;
+		       transition: background-color 0.3s ease;
+		       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	    }
+
+		.btn-delete:hover {
+		       background-color: #c0392b; /* Darker red on hover */
+		   }
     </style>
 </head>
 <body>
@@ -95,6 +111,8 @@
                     <td>${todo.description}</td>
                     <td>${todo.targetDate}</td>
                     <td>${todo.done}</td>
+					<td><a href="delete-todo?id=${todo.id}" class="btn-delete">Delete ${todo.id}</a></td>
+
                 </tr>
             </c:forEach>
         </tbody>
