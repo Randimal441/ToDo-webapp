@@ -73,8 +73,9 @@
 
     <form method="post">
         <label for="description">Description:</label>
-        <input type="text" id="description" name="description" required />
-
+        <input type="text" name="description" required />
+		<input type="hidden"  name="id">
+		<input type="hidden"  name="done">
         <input type="submit" class="btn" />
     </form>
 </body>
