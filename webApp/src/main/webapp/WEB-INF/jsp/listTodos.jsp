@@ -87,6 +87,42 @@
 		.btn-delete:hover {
 		       background-color: #c0392b; /* Darker red on hover */
 		   }
+		   
+	
+		       .btn-update {
+		           display: inline-block;
+		           padding: 10px 20px;
+		           background-color: #27ae60; /* Green */
+		           color: #fff;
+		           font-size: 14px;
+		           font-weight: 600;
+		           text-decoration: none;
+		           border-radius: 6px;
+		           transition: background-color 0.3s ease;
+		           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		       }
+
+		       .btn-update:hover {
+		           background-color: #1e8449; /* Darker green on hover */
+		       }
+	
+			   .btn-update {
+			           display: inline-block;
+			           padding: 10px 20px;
+			           background-color: #27ae60; /* Green */
+			           color: #fff;
+			           font-size: 14px;
+			           font-weight: 600;
+			           text-decoration: none;
+			           border-radius: 6px;
+			           transition: background-color 0.3s ease;
+			           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			       }
+
+			       .btn-update:hover {
+			           background-color: #1e8449; /* Darker green on hover */
+			       }
+		   
     </style>
 </head>
 <body>
@@ -112,6 +148,7 @@
                     <td>${todo.targetDate}</td>
                     <td>${todo.done}</td>
 					<td><a href="delete-todo?id=${todo.id}" class="btn-delete">Delete ${todo.id}</a></td>
+					<td><a href="update-todo?id=${todo.id}" class="btn-update">Update ${todo.id}</a></td>
 
                 </tr>
             </c:forEach>
