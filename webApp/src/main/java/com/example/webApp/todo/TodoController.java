@@ -31,7 +31,8 @@ public class TodoController {
 	@RequestMapping(value ="add-todo", method = RequestMethod.GET)
 	public String showTodoPage(ModelMap model) {
 		String username = (String)model.get("name");
-		ToDo todo = new ToDo(0, username, "Default Desc", LocalDate.now().plusYears(1), false);
+		ToDo todo = new ToDo(0, username, " ", LocalDate.now().plusYears(1), false);
+		model.addAttribute("todo", todo);
 		return "todo";
 	}
 	
@@ -55,5 +56,12 @@ public class TodoController {
 		ToDo todo =toDoService.findById(id);
 		model.addAttribute("todo", todo);
 		return "todo";
+	}
+	
+	@RequestMapping(value = "update-todo", method = RequestMethod.POST)
+	public String updateTodo(@RequestParam int id, @RequestParam String description) {
+		ToDo todo = toDoService.findById(id);
+		todo.setDescription(description);
+		return "redirect:list-todos";
 	}
 }

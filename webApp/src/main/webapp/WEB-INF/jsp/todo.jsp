@@ -73,11 +73,17 @@
     </div>
 
     <form:form method="post" modelAttribute="todo">
-        <label for="description">Description:</label>
-        <input type="text" name="description" required />
-		<input type="hidden"  name="id"/>
-		<input type="hidden"  name="done"/>
-        <input type="submit" class="btn" />
+		<fieldset>
+			<label for="description">Description:</label>
+	        <form:input path="description" id="description" name="description" required="true" />
+		</fieldset>
+		<fieldset>
+		    <label for="targetDate">Target Date:</label>
+		    <form:input path="targetDate" id="targetDate" name="targetDate" required="true" />
+		</fieldset>
+		<form:input type="hidden" path="id" name="id" />
+		<form:input type="hidden" path="done" name="done" />
+        <input type="submit" class="btn" >
     </form:form>
 </body>
 </html>
