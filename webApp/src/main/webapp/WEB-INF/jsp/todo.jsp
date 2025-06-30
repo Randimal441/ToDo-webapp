@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css">
     <title>Enter To-Do</title>
     <style>
         body {
@@ -85,6 +86,7 @@
 		<form:input type="hidden" path="done" name="done" />
         <input type="submit" class="btn" >
     </form:form>
+	<script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 </body>
 </html>
 
