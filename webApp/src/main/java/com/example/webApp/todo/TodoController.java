@@ -37,10 +37,11 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value ="add-todo", method = RequestMethod.POST)
-	public String addNewTodo(@RequestParam String description, ModelMap model) {
-		String username = (String)model.get("name");
-		toDoService.addTodo((String)model.get("name"),description, LocalDate.now().plusYears(1), false);
-		return "redirect:list-todos";
+	public String addNewTodo(@ModelAttribute("todo") ToDo todo, ModelMap model) {
+	    // Set username if needed
+	    todo.setUsername("in28min"); // or get from session/model
+	    toDoService.addTodo(todo.getUsername(), todo.getDescription(), todo.getTargetDate(), todo.isDone());
+	    return "redirect:list-todos";
 	}
 	
 	@RequestMapping("delete-todo")
@@ -59,9 +60,12 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value = "update-todo", method = RequestMethod.POST)
-	public String updateTodo(@RequestParam int id, @RequestParam String description) {
-		ToDo todo = toDoService.findById(id);
-		todo.setDescription(description);
-		return "redirect:list-todos";
+	public String updateTodo(@ModelAttribute("todo") ToDo todo) {
+	    ToDo existingTodo = toDoService.findById(todo.getId());
+	    existingTodo.setDescription(todo.getDescription());
+	    existingTodo.setTargetDate(todo.getTargetDate());
+	    existingTodo.setDone(todo.isDone());
+	    // Optionally update username if needed
+	    return "redirect:list-todos";
 	}
 }
