@@ -134,7 +134,6 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Description</th>
                 <th>Target Date</th>
                 <th>Is Done?</th>
@@ -143,12 +142,12 @@
         <tbody>
             <c:forEach items="${todos}" var="todo">
                 <tr>
-                    <td>${todo.id}</td>
+                    
                     <td>${todo.description}</td>
                     <td>${todo.targetDate}</td>
                     <td>${todo.done}</td>
-					<td><a href="delete-todo?id=${todo.id}" class="btn-delete">Delete ${todo.id}</a></td>
-					<td><a href="update-todo?id=${todo.id}" class="btn-update">Update ${todo.id}</a></td>
+					<td><a href="delete-todo?id=${todo.id}" class="btn-delete">Delete</a></td>
+					<td><a href="update-todo?id=${todo.id}" class="btn-update">Update</a></td>
 
                 </tr>
             </c:forEach>
