@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	    
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	    
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css">
     <title>Enter To-Do</title>
     <style>
@@ -80,13 +85,30 @@
 		</fieldset>
 		<fieldset>
 		    <label for="targetDate">Target Date:</label>
-		    <form:input path="targetDate" id="targetDate" name="targetDate" required="true" />
+		    <form:input path="targetDate" id="targetDate" name="targetDate" cssClass="datepicker" required="true" />
 		</fieldset>
 		<form:input type="hidden" path="id" name="id" />
 		<form:input type="hidden" path="done" name="done" />
         <input type="submit" class="btn" >
     </form:form>
 	<script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#targetDate').datepicker({
+	        format: 'yyyy-mm-dd',
+	        autoclose: true,
+	        todayHighlight: true
+	    });
+
+	    // Open datepicker on spacebar
+	    $('#targetDate').on('keydown', function(e) {
+	        if (e.key === " " || e.keyCode === 32) {
+	            $(this).datepicker('show');
+	            e.preventDefault();
+	        }
+	    });
+	});
+	</script>	
 </body>
 </html>
 
