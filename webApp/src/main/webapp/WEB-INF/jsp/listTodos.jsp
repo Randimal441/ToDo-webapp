@@ -16,11 +16,13 @@
             min-height: 100vh;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
-        }
+		h1 {
+		    margin-bottom: 20px;
+		    font-size: 36px;
+		    
+		    text-shadow: 1px 1px 4px rgba(0, 0, 0, 4); /* Softer black shadow */
+		}
+
 
         .add-button {
             background-color: #d0e7ff;
@@ -122,10 +124,99 @@
 			       .btn-update:hover {
 			           background-color: #1e8449; /* Darker green on hover */
 			       }
+				   
+				   nav.navbar {
+				          display: flex;
+				          justify-content: space-between;
+				          align-items: center;
+				          background: linear-gradient(90deg, #1e3c72, #2a5298); /* blue gradient */
+				          padding: 12px 24px;
+				          color: white;
+				          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+				          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				      }
+
+				      /* Left and right nav groups */
+				      .navbar-nav {
+				          display: flex;
+				          list-style: none;
+				          padding: 0;
+				          margin: 0;
+				      }
+
+				      .nav-item {
+				          margin-left: 20px;
+				      }
+
+				      .nav-link {
+				          color: #ffffff;
+				          text-decoration: none;
+				          font-weight: 500;
+				          transition: color 0.3s ease;
+				          padding: 8px 12px;
+				          border-radius: 4px;
+				      }
+
+				      .nav-link:hover {
+				          background-color: rgba(255, 255, 255, 0.15);
+				          color: #f0f0f0;
+				      }
+
+				      /* Branding */
+				      .navbar-brand {
+				          font-size: 22px;
+				          font-weight: bold;
+				          color: #ffffff;
+				          text-decoration: none;
+				          margin-right: 30px;
+				      }
+
+				      .navbar-brand:hover {
+				          color: #f5f5f5;
+				      }
+
+				      /* Responsive collapse simulation (optional JS needed for real collapse) */
+				      @media (max-width: 768px) {
+				          nav.navbar {
+				              flex-direction: column;
+				              align-items: flex-start;
+				          }
+
+				          .navbar-nav {
+				              flex-direction: column;
+				              width: 100%;
+				          }
+
+				          .nav-item {
+				              margin-left: 0;
+				              width: 100%;
+				          }
+
+				          .nav-link {
+				              display: block;
+				              width: 100%;
+				          }
+				      }		   
+		
 		   
     </style>
 </head>
 <body>
+	
+	<nav class="navbar navbar-expand-md navbar-light bg-light mb-3 p-1">
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="/list-todos">Todos</a></li>
+			</ul>
+		</div>
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+		</ul>	
+	</nav>
+	
+	
+	
     <h1>To-Do List</h1>
 
     <!-- Add ToDo Button -->
