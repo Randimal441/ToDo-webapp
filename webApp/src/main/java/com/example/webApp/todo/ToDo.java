@@ -4,8 +4,15 @@ import java.time.LocalDate;
 
 import org.springframework.boot.convert.DataSizeUnit;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class ToDo {
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String username;
 	private String description;
