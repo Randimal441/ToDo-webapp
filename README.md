@@ -18,7 +18,10 @@ A simple, robust Spring Boot web application to manage your to-do items with sec
 ## 📁 Project Structure
 
 src/
-  main/
+
+  
+    main/
+  
     java/com.example.webApp/ 
     
       controller/       # Handles web requests (Login, Welcome, Todo)
@@ -27,15 +30,25 @@ src/
      
       service/          # Business logic layer (LoginService, ToDoService)
      
+     
       todo/             # ToDo entity and related logic
+     
       WebAppApplication.java
+   
     resources/
+     
       application.properties
+      
       static/
+     
       templates/
+    
       webapp/WEB-INF/jsp/ # JSP views (login, todo, welcome, etc.)
-  test/
+
+    test/
+    
     java/com.example.webApp/
+    
       WebAppApplicationTests.java
 
 
